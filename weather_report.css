@@ -5,19 +5,89 @@ html {
 }
 
 body{
-        header {
-            color: white;
-        
-            font-size: x-large;
-            text-align: left;
+    header {
+        color: white;
+    
+        font-size: x-large;
+        text-align: left;
 
-            background: linear-gradient(to right, dodgerblue, yellow);
-            background-repeat: no-repeat;
-            background-position: 0 1em;
-            background-size: 7.1em 6px;
+        background: linear-gradient(to right, dodgerblue, yellow);
+        background-repeat: no-repeat;
+        background-position: 0 1em;
+        background-size: 7.1em 6px;
 
-            .logo{
-                filter: invert(83%) sepia(54%) saturate(3182%) hue-rotate(3deg) brightness(109%) contrast(103%);
-            }
+        .logo{
+            filter: invert(83%) sepia(54%) saturate(3182%) hue-rotate(3deg) brightness(109%) contrast(103%);
         }
     }
+
+    .monday {
+        color: #9400D3;
+        background: gainsboro;
+        font-size: 50px;
+    }
+    .monday:hover {
+        background: #9400D3;
+        color: gainsboro;
+    }
+
+    .tuesday {
+        color: #4B0082;
+        background: gainsboro;
+        font-size: 50px;
+    }
+    .tuesday:hover {
+        background: #4B0082;
+        color: gainsboro;
+    }
+
+    .wednesday {
+        color: #0000FF;
+        background: gainsboro;
+        font-size: 50px;
+    }
+    .wednesday:hover {
+        background: #0000FF;
+        color: gainsboro;
+    }
+
+    .thursday {
+        color: #00FF00;
+        background: gainsboro;
+        font-size: 50px;
+    }
+    .thursday:hover {
+        background: #00FF00;
+        color: gainsboro;
+    }
+
+    .friday {
+        color: #FFFF00;
+        background: gainsboro;
+        font-size: 50px;
+    }
+    .friday:hover {
+        background: #FFFF00;
+        color: gainsboro;
+    }
+
+    .saturday {
+        color: #FF7F00;
+        background: gainsboro;
+        font-size: 50px;
+    }
+    .saturday:hover {
+        background: #FF7F00;
+        color: gainsboro;
+    }
+
+    .sunday {
+        color: #FF0000;
+        background: gainsboro;
+        font-size: 50px;
+    }
+    .sunday:hover {
+        background: #FF0000;
+        color: gainsboro;
+    }
+}
