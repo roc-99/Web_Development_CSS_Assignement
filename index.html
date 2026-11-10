@@ -4,6 +4,7 @@
 	<head>
 		<title>Weather Report Dashboard</title>
 		<link rel="stylesheet" href="weather_report.css">
+		<script src="weather_scripts.js" defer></script>
 	</head>
 	<body>
 		<header>Weather Report
@@ -11,15 +12,42 @@
 		</header>
 		<p>This is a test....</p>
 
-		<button class="monday">Monday</button>
-		<button class="tuesday">Tuesday</button>
-		<button class="wednesday">Wednesday</button>
-		<button class="thursday">Thursday</button>
-		<button class="friday">Friday</button>
-		<button class="saturday">Saturday</button>
-		<button class="sunday">Sunday</button>
+		<button class="monday" onclick="dayChange(1)">Monday</button>
+		<button class="tuesday" onclick="dayChange(2)">Tuesday</button>
+		<button class="wednesday" onclick="dayChange(3)">Wednesday</button>
+		<button class="thursday" onclick="dayChange(4)">Thursday</button>
+		<button class="friday" onclick="dayChange(5)">Friday</button>
+		<button class="saturday" onclick="dayChange(6)">Saturday</button>
+		<button class="sunday" onclick="dayChange(7)">Sunday</button>
+
+		<hr>
 
 		<div class="weather_info">
+			<section class = "early_morning">
+				<h1>Early Morning</h1>
+				<h2>6AM - 9AM</h2>
+				<img>
+			</section>
+			<section class = "late_morning">
+				<h1>Late Morning</h1>
+				<h2>9AM - 12AM</h2>
+			</section>
+			<section class = "early_afternoon">
+				<h1>Early Afternoon</h1>
+				<h2>12AM - 3PM</h2>
+			</section>
+			<section class = "late_afternoon">
+				<h1>Late Afternoon</h1>
+				<h2>3PM - 6PM</h2>
+			</section>
+			<section class = "evening">
+				<h1>Evening</h1>
+				<h2>6PM - 9PM</h2>
+			</section>
+			<section class = "night">
+				<h1>Night</h1>
+				<h2>9PM - 6AM</h2>
+			</section>
 		</div>
 
 	</body>
