@@ -1,0 +1,23 @@
+html {
+	color: #ffffff;
+	background: rgb(22, 23, 26);
+	font-family: Helvetica, Arial, sans-serif;
+}
+
+body{
+        header {
+            color: white;
+        
+            font-size: x-large;
+            text-align: left;
+
+            background: linear-gradient(to right, dodgerblue, yellow);
+            background-repeat: no-repeat;
+            background-position: 0 1em;
+            background-size: 7.1em 6px;
+
+            .logo{
+                filter: invert(83%) sepia(54%) saturate(3182%) hue-rotate(3deg) brightness(109%) contrast(103%);
+            }
+        }
+    }
