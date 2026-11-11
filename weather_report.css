@@ -8,7 +8,7 @@ body{
     header {
         color: white;
     
-        font-size: x-large;
+        font-size: 70px;
         text-align: left;
 
         background: linear-gradient(to right, dodgerblue, yellow);
@@ -89,5 +89,26 @@ body{
     .sunday:hover {
         background: #FF0000;
         color: gainsboro;
+    }
+
+
+    .weather_info{
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+    }
+
+    div > section{
+        background-color: gainsboro;
+        
+        border-style: solid;
+        border-width: 5px;
+        border-color: cyan;
+
+        h1{
+            color: firebrick;
+        }
+        h2{
+            color: forestgreen;
+        }
     }
 }
