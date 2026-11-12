@@ -1,18 +1,18 @@
-const weather_data = [["foggy", "foggy", "cloudy", "sunny", "cloudy", "rainy", "snowy"],
-                      ["cloudy", "rainy", "sunny", "sunny", "rainy", "stormy", "snowy"],
-                      ["sunny", "rainy", "cloudy", "sunny", "cloudy", "rainy", "snowy"],
-                      ["sunny", "cloudy", "cloudy", "sunny", "cloudy", "rainy", "snowy"],
-                      ["cloudy_night", "clear_moon", "cloudy", "sunny", "cloudy", "rainy", "snowy"],
-                      ["foggy", "clear_moon", "cloudy", "sunny", "cloudy", "rainy", "snowy"]] 
+const weather_data = [["foggy", "foggy", "cloudy", "sunny", "foggy", "rainy", "snowy"],
+                      ["cloudy", "rainy", "sunny", "sunny", "foggy", "stormy", "snowy"],
+                      ["sunny", "rainy", "cloudy", "sunny", "cloudy", "stormy", "cloudy"],
+                      ["sunny", "cloudy", "stormy", "sunny", "cloudy", "stormy", "sunny"],
+                      ["cloudy_night", "clear_moon", "cloudy_night", "clear_moon", "rainy_night", "rainy", "clear_moon"],
+                      ["rainy_night", "clear_moon", "rainy_night", "clear_moon", "cloudy", "snowy", "cloudy_night"]] 
 
-
-let weather_info = document.querySelector(".weather_info")
 
 function dayChange (n) {
-
-    const day_parts = weather_info.children;
+    console.log(n)
+    const day_parts = document.querySelectorAll("#wimg");
+    
     for (let i = 0; i < day_parts.length; i++) {
-        day_parts[i].getElementById("img").src= weather_data[i][n] + ".png";
+        day_parts[i].src= weather_data[i][n-1] + ".png"
+        console.log(day_parts[i])
     }
 
 }
