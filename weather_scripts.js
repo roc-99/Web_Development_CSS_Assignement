@@ -1,3 +1,10 @@
+const temperature_data = [[20, 14],
+                          [18, 14],
+                          [21, 16],
+                          [25, 19],
+                          [19, 10],
+                          [15, 7]] 
+
 const weather_data = [["foggy", "foggy", "cloudy", "sunny", "foggy", "rainy", "snowy"],
                       ["cloudy", "rainy", "sunny", "sunny", "foggy", "stormy", "snowy"],
                       ["sunny", "rainy", "cloudy", "sunny", "cloudy", "stormy", "cloudy"],
@@ -7,13 +14,13 @@ const weather_data = [["foggy", "foggy", "cloudy", "sunny", "foggy", "rainy", "s
 
 
 function dayChange (n) {
-    console.log(n)
     const day_parts = document.querySelectorAll("#wimg");
     
     for (let i = 0; i < day_parts.length; i++) {
         day_parts[i].src= weather_data[i][n-1] + ".png"
-        console.log(day_parts[i])
     }
 
+    document.getElementById("max_number").innerHTML = temperature_data[n][0] + " C";
+    document.getElementById("min_number").innerHTML = temperature_data[n][1] + " C";
 }
 
