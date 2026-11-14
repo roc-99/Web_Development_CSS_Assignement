@@ -1,7 +1,22 @@
+//Function inspired from https://www.geeksforgeeks.org/javascript/how-to-switch-between-multiple-css-stylesheets-using-javascript/
+function toggleTheme() {
+    let theme = document.getElementById('theme');
+
+    if (theme.getAttribute('href') == 'light_mode.css') {
+        theme.setAttribute('href', 'dark_mode.css');
+        document.getElementById("logo").src = "logo_sun.svg";
+    } else {
+        theme.setAttribute('href', 'light_mode.css');
+        document.getElementById("logo").src = "logo_moon.svg";
+    }
+}
+
+
 const temperature_data = [[20, 14],
                           [18, 14],
                           [21, 16],
                           [25, 19],
+                          [22, 13],
                           [19, 10],
                           [15, 7]] 
 
@@ -20,7 +35,8 @@ function dayChange (n) {
         day_parts[i].src= weather_data[i][n-1] + ".png"
     }
 
-    document.getElementById("max_number").innerHTML = temperature_data[n][0] + " C";
-    document.getElementById("min_number").innerHTML = temperature_data[n][1] + " C";
+    console.log(n)
+    document.getElementById("max_number").innerHTML = temperature_data[n-1][0] + "º C";
+    document.getElementById("min_number").innerHTML = temperature_data[n-1][1] + "º C";
 }
 

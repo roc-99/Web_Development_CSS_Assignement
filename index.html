@@ -3,12 +3,14 @@
 <html>
 	<head>
 		<title>Weather Report Dashboard</title>
-		<link rel="stylesheet" href="weather_report.css">
+		<link id= "theme" rel="stylesheet" href="dark_mode.css">
 		<script src="weather_scripts.js" defer></script>
 	</head>
 	<body>
 		<header>Weather Report
-			<img src="LogoSun.svg" width="70" height="70" class="logo"/>
+			<button type="button"onclick="toggleTheme()">
+				<img id = "logo" src="logo_sun.svg" width="70" height="70" class="logo"/>
+			</button>
 		</header>
 
 		<button class="monday" onclick="dayChange(1)">Monday</button>
@@ -23,10 +25,10 @@
 
 		<div class="temperature_info">
 			<section class = "max">
-				<h1 id="max_number"> 25 C</h1>
+				<h1 id="max_number"> 20º C</h1>
 			</section>
 			<section class = "min">
-				<h1 id="min_number"> 16 C</h1>
+				<h1 id="min_number"> 14º C</h1>
 			</section>
 		</div>
 

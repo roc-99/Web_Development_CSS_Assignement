@@ -1,6 +1,6 @@
 html {
 	color: #ffffff;
-	background: rgb(22, 23, 26);
+	background: black;
 	font-family: Helvetica, Arial, sans-serif;
 }
 
@@ -19,12 +19,34 @@ body{
         .logo{
             filter: invert(83%) sepia(54%) saturate(3182%) hue-rotate(3deg) brightness(109%) contrast(103%);
         }
+
+        button{
+            background-color: transparent;
+            border: none 
+        }
     }
 
+    
     hr{
         height: 5px;
-        background-color:gray
+        background:linear-gradient(to left, red,orange,yellow,green,blue,indigo,violet)
     }
+
+
+    .temperature_info{
+        display: grid;
+        grid-template-columns: repeat(13, 1fr);
+
+        .max{
+            background: linear-gradient(to right, red, orange);
+        }
+
+        .min{
+            background: linear-gradient(to right, blue, cyan);
+        }
+        
+    }
+
 
     .monday {
         color: #9400D3;
@@ -95,22 +117,6 @@ body{
         background: #FF0000;
         color: gainsboro;
     }
-
-
-    .temperature_info{
-        display: grid;
-        grid-template-columns: repeat(13, 1fr);
-
-        .max{
-            background: linear-gradient(to right, red, orange);
-        }
-
-        .min{
-            background: linear-gradient(to right, blue, cyan);
-        }
-        
-    }
-
 
     .weather_info{
         display: grid;
