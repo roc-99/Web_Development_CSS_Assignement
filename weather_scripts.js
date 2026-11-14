@@ -39,6 +39,7 @@ function dayChange (n) {
 
         data = weather_data[i][n-1]
 
+        day_parts[i].className= data
         day_parts[i].src= data + ".png"
 
         data_split = data.split("_")

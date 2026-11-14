@@ -89,6 +89,24 @@ body{
             .sunny{
                 animation: spin 5s linear infinite;
             }
+            .snowy{
+                animation:spin 10s linear infinite;
+            }
+            .cloudy{
+                position: relative;
+                animation:hover 3s linear infinite;
+            }
+            .cloudy_night{
+                position: relative;
+                animation:hover 6s linear infinite;
+            }
+            .stormy{
+                position: relative;
+                animation:dashing 0.8s cubic-bezier(1,0,0,1) infinite;
+            }
+            .clear_night{
+                animation: shine 3s ease-in infinite
+            }
         }
     }
 
@@ -172,4 +190,24 @@ body{
     to {
         transform: rotate(360deg);
     }
+}
+
+@keyframes hover {
+    0%   {left:0px; top:0px};
+    25%  {left:0px; top: 25px};
+    50%  {left:0px; top:0px};
+    75%  {left:0px; top:-25px};
+    100% {left:0px; top:0px};
+}
+
+@keyframes dashing {
+    0%   {left:25px; top:-25px};
+    50%  {left:-25px; top:25px};
+    100% {opacity: 0; left:0px; top:0px};
+}
+
+@keyframes shine { 
+    0%   {filter: brightness(100%)};
+    50%  {filter: brightness(150%)};
+    100% {filter: brightness(100%)};
 }
