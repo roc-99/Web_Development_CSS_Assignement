@@ -34,15 +34,27 @@ body{
 
 
     .temperature_info{
-        display: grid;
-        grid-template-columns: repeat(13, 1fr);
+        display: flex;
+        flex-direction:row;
+
+        h1{
+            color: white;
+        }
 
         .max{
             background: linear-gradient(to right, red, orange);
+            flex-grow: 1;
+            
         }
 
         .min{
             background: linear-gradient(to right, blue, cyan);
+            flex-grow: 1;
+            align-items: center;
+        }
+
+        img{
+            filter: invert(45%) sepia(91%) saturate(2564%) hue-rotate(192deg) brightness(100%) contrast(102%);
         }
         
     }

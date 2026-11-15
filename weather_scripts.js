@@ -20,6 +20,8 @@ const temperature_data = [[20, 14],
                           [19, 10],
                           [15, 7]] 
 
+const precipitation_data = [15, 60, 57, 0, 48, 100, 10] 
+
 const weather_data = [["foggy", "foggy", "cloudy", "sunny", "foggy", "rainy", "snowy"],
                       ["cloudy", "rainy", "sunny", "sunny", "foggy", "stormy", "snowy"],
                       ["sunny", "rainy", "cloudy", "sunny", "cloudy", "stormy", "cloudy"],
@@ -54,5 +56,7 @@ function dayChange (n) {
     console.log(n)
     document.getElementById("max_number").innerHTML = temperature_data[n-1][0] + "º C"
     document.getElementById("min_number").innerHTML = temperature_data[n-1][1] + "º C"
+
+    document.getElementById("rain_chance").innerHTML = precipitation_data[n-1] + " %"
 }
 
