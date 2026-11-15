@@ -4,10 +4,10 @@ function toggleTheme() {
 
     if (theme.getAttribute('href') == 'light_mode.css') {
         theme.setAttribute('href', 'dark_mode.css')
-        document.getElementById("logo").src = "logo_sun.svg"
+        document.getElementById("logo").src = "logo_moon.svg"
     } else {
         theme.setAttribute('href', 'light_mode.css')
-        document.getElementById("logo").src = "logo_moon.svg"
+        document.getElementById("logo").src = "logo_sun.svg"
     }
 }
 
@@ -24,8 +24,8 @@ const weather_data = [["foggy", "foggy", "cloudy", "sunny", "foggy", "rainy", "s
                       ["cloudy", "rainy", "sunny", "sunny", "foggy", "stormy", "snowy"],
                       ["sunny", "rainy", "cloudy", "sunny", "cloudy", "stormy", "cloudy"],
                       ["sunny", "cloudy", "stormy", "sunny", "cloudy", "stormy", "sunny"],
-                      ["cloudy_night", "clear_night", "cloudy_night", "clear_night", "rainy_night", "rainy", "clear_night"],
-                      ["rainy_night", "clear_night", "rainy_night", "clear_night", "cloudy_night", "snowy", "cloudy_night"]] 
+                      ["cloudy_night", "clear_night", "cloudy_night", "clear_night", "stormy_night", "rainy", "clear_night"],
+                      ["stormy_night", "clear_night", "stormy_night", "clear_night", "cloudy_night", "snowy", "cloudy_night"]] 
 
 
 function dayChange (n) {

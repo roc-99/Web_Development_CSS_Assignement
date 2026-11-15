@@ -17,7 +17,7 @@ body{
         background-size: 7.1em 6px;
 
         .logo{
-            filter: invert(92%) sepia(13%) saturate(1201%) hue-rotate(358deg) brightness(104%) contrast(88%);
+            filter: invert(83%) sepia(54%) saturate(3182%) hue-rotate(3deg) brightness(109%) contrast(103%);
         }
 
         button{
@@ -89,25 +89,36 @@ body{
             }
 
             .sunny{
-                animation:spin 5s linear infinite;
+                animation: spin 5s linear infinite;
             }
             .snowy{
-                animation:spin 10s linear infinite;
+                animation: spin 10s linear infinite;
             }
             .cloudy{
                 position: relative;
-                animation:hover 3s linear infinite;
+                animation: hover 3s linear infinite;
             }
             .cloudy_night{
                 position: relative;
-                animation:hover 6s linear infinite;
+                animation: hover 6s linear infinite;
             }
             .stormy{
                 position: relative;
-                animation:dashing 0.8s cubic-bezier(1,0,0,1) infinite;
+                animation: dashing 0.8s cubic-bezier(1,0,0,1) infinite;
             }
             .clear_night{
                 animation: shine 3s ease-in infinite
+            }
+            .rainy{
+                position: relative;
+                animation:drooping 1s cubic-bezier(1,0,0,1) infinite;
+            }
+            .stormy_night{
+                animation: lightning 5s cubic-bezier(.68,-0.55,.27,1.55) infinite
+            }
+            .foggy{
+                position: relative;
+                animation: sliding 4.5s linear infinite;
             }
         }
     }
@@ -212,4 +223,27 @@ body{
     0%   {filter: brightness(100%)};
     50%  {filter: brightness(150%)};
     100% {filter: brightness(100%)};
+}
+
+@keyframes drooping {
+    0%   {left:0px; top:-35px};
+    50%  {left:0px; top:20px};
+    75% {opacity: 0; left:0px; top:0px};
+    100% {opacity: 0; left:0px; top:-30px};
+}
+
+@keyframes lightning { 
+    0%   {filter: brightness(100%); filter: contrast(100%)};
+    25%  {filter: brightness(200%); filter: contrast(200%)};
+    50%  {filter: brightness(100%); filter: contrast(100%)};
+    75%  {filter: brightness(200%); filter: contrast(200%)};
+    100% {filter: brightness(100%); filter: contrast(100%)};
+}
+
+@keyframes sliding {
+    0%   {left:0px; top:0px};
+    25%  {left:25px; top: 0px};
+    50%  {left:0px; top:0px};
+    75%  {left:-25px; top:0px};
+    100% {left:0px; top:0px};
 }
