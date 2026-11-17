@@ -143,7 +143,7 @@ body{
         }
 
         .min{
-            background: linear-gradient(to right, blue, cyan);
+            background: linear-gradient(to right, cyan, blue);
             flex-grow: 1;
             text-align: center;
         }

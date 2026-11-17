@@ -1,12 +1,23 @@
+let stylesheet = document.querySelector('link[rel="stylesheet"]')
+stylesheet.setAttribute('href', localStorage.getItem("theme") || 'dark_mode.css')
+
+if (localStorage.getItem("theme") === 'light_mode.css') {
+    document.getElementById("logo").src = "logo_sun.svg"
+}
+
+
+
 //Function inspired from https://www.geeksforgeeks.org/javascript/how-to-switch-between-multiple-css-stylesheets-using-javascript/
 function toggleTheme() {
-    let theme = document.getElementById('theme');
+    const theme = localStorage.getItem("theme")
 
-    if (theme.getAttribute('href') == 'light_mode.css') {
-        theme.setAttribute('href', 'dark_mode.css')
+    if (theme === 'light_mode.css') {
+        localStorage.setItem('theme', 'dark_mode.css')
+        stylesheet.setAttribute('href', 'dark_mode.css')
         document.getElementById("logo").src = "logo_moon.svg"
     } else {
-        theme.setAttribute('href', 'light_mode.css')
+        localStorage.setItem('theme', 'light_mode.css')
+        stylesheet.setAttribute('href', 'light_mode.css')
         document.getElementById("logo").src = "logo_sun.svg"
     }
 }
@@ -29,8 +40,12 @@ const weather_data = [["foggy", "foggy", "cloudy", "sunny", "foggy", "rainy", "s
                       ["cloudy_night", "clear_night", "cloudy_night", "clear_night", "stormy_night", "rainy", "clear_night"],
                       ["stormy_night", "clear_night", "stormy_night", "clear_night", "cloudy_night", "snowy", "cloudy_night"]] 
 
+dayChange(parseInt(localStorage.getItem("day") || "1"))
+
 
 function dayChange (n) {
+    localStorage.setItem('day', n)
+
     const day_parts = document.querySelectorAll("#wimg")
     const day_parts_text = document.querySelectorAll("#wtext")
 
@@ -42,7 +57,7 @@ function dayChange (n) {
         data = weather_data[i][n-1]
 
         day_parts[i].className= data
-        day_parts[i].src= data + ".png"
+        day_parts[i].src= data + ".webp"
 
         data_split = data.split("_")
         data=""
@@ -53,7 +68,6 @@ function dayChange (n) {
         day_parts_text[i].innerHTML = data
     }
 
-    console.log(n)
     document.getElementById("max_number").innerHTML = temperature_data[n-1][0] + "º C"
     document.getElementById("min_number").innerHTML = temperature_data[n-1][1] + "º C"
 
