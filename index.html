@@ -13,14 +13,16 @@
 			</button>
 		</header>
 
-		<button class="monday" onclick="dayChange(1)">Monday</button>
-		<button class="tuesday" onclick="dayChange(2)">Tuesday</button>
-		<button class="wednesday" onclick="dayChange(3)">Wednesday</button>
-		<button class="thursday" onclick="dayChange(4)">Thursday</button>
-		<button class="friday" onclick="dayChange(5)">Friday</button>
-		<button class="saturday" onclick="dayChange(6)">Saturday</button>
-		<button class="sunday" onclick="dayChange(7)">Sunday</button>
-
+		<div class="days">
+			<button class="monday" onclick="dayChange(1)">Monday</button>
+			<button class="tuesday" onclick="dayChange(2)">Tuesday</button>
+			<button class="wednesday" onclick="dayChange(3)">Wednesday</button>
+			<button class="thursday" onclick="dayChange(4)">Thursday</button>
+			<button class="friday" onclick="dayChange(5)">Friday</button>
+			<button class="saturday" onclick="dayChange(6)">Saturday</button>
+			<button class="sunday" onclick="dayChange(7)">Sunday</button>
+		</div>
+		
 		<hr>
 
 		<div class="temperature_info">
@@ -32,8 +34,7 @@
 			</section>
 			
 			<img id = "rain_logo" src="rain_drop.svg" width="70" height="70" class="logo"/>
-			<h1 id= "rain_chance">15 %</h1>
-
+			<h1 id= "rain_chance" class="rain"> 15 %</h1>
 		</div>
 
 		<hr>
@@ -73,7 +74,7 @@
 				<h1>Night</h1>
 				<h2>9PM - 6AM</h2>
 				<img  id="wimg" class="stormy_night" src="stormy_night.png">
-				<h3 id="wtext">Clear Night</h2>
+				<h3 id="wtext">Stormy Night</h2>
 			</section>
 		</div>
 	</body>
