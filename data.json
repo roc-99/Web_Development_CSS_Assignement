@@ -1,0 +1,100 @@
+[
+    {
+        "day": 1,
+        "min_temp": 14,
+        "max_temp": 20,
+        "precipitation": 15,
+        "weather_data": {
+            "early_morining": "foggy",
+            "late_morining": "cloudy",
+            "early_afternoon": "sunny",
+            "late_afternoon": "sunny",
+            "evening": "cloudy_night",
+            "night": "stormy_night"
+        }
+    },
+    {
+        "day": 2,
+        "min_temp": 13,
+        "max_temp": 18,
+        "precipitation": 60,
+        "weather_data": {
+            "early_morining": "foggy",
+            "late_morining": "rainy",
+            "early_afternoon": "rainy",
+            "late_afternoon": "cloudy",
+            "evening": "clear_night",
+            "night": "clear_night"
+        }
+    },
+    {
+        "day": 3,
+        "min_temp": 16,
+        "max_temp": 21,
+        "precipitation": 27,
+        "weather_data": {
+            "early_morining": "cloudy",
+            "late_morining": "sunny",
+            "early_afternoon": "cloudy",
+            "late_afternoon": "stormy",
+            "evening": "cloudy_night",
+            "night": "clear_night"
+        }
+    },
+    {
+        "day": 4,
+        "min_temp": 19,
+        "max_temp": 25,
+        "precipitation": 0,
+        "weather_data": {
+            "early_morining": "sunny",
+            "late_morining": "sunny",
+            "early_afternoon": "sunny",
+            "late_afternoon": "sunny",
+            "evening": "clear_night",
+            "night": "clear_night"
+        }
+    },
+    {
+        "day": 5,
+        "min_temp": 13,
+        "max_temp": 19,
+        "precipitation": 48,
+        "weather_data": {
+            "early_morining": "foggy",
+            "late_morining": "foggy",
+            "early_afternoon": "cloudy",
+            "late_afternoon": "cloudy",
+            "evening": "stormy_night",
+            "night": "cloudy_night"
+        }
+    },
+    {
+        "day": 6,
+        "min_temp": 7,
+        "max_temp": 14,
+        "precipitation": 100,
+        "weather_data": {
+            "early_morining": "rainy",
+            "late_morining": "stormy",
+            "early_afternoon": "stormy",
+            "late_afternoon": "stormy",
+            "evening": "stormy_night",
+            "night": "snowy"
+        }
+    },
+    {
+        "day": 7,
+        "min_temp": 4,
+        "max_temp": 12,
+        "precipitation": 34,
+        "weather_data": {
+            "early_morining": "snowy",
+            "late_morining": "snowy",
+            "early_afternoon": "sunny",
+            "late_afternoon": "rainy",
+            "evening": "cloudy_night",
+            "night": "clear_night"
+        }
+    }
+]
