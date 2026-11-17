@@ -1,11 +1,4 @@
-let stylesheet = document.querySelector('link[rel="stylesheet"]')
-stylesheet.setAttribute('href', localStorage.getItem("theme") || 'dark_mode.css')
-
-if (localStorage.getItem("theme") === 'light_mode.css') {
-    document.getElementById("logo").src = "logo_sun.svg"
-}
-
-
+let data = undefined
 
 //Function inspired from https://www.geeksforgeeks.org/javascript/how-to-switch-between-multiple-css-stylesheets-using-javascript/
 function toggleTheme() {
@@ -22,55 +15,60 @@ function toggleTheme() {
     }
 }
 
-
-const temperature_data = [[20, 14],
-                          [18, 14],
-                          [21, 16],
-                          [25, 19],
-                          [22, 13],
-                          [19, 10],
-                          [15, 7]] 
-
-const precipitation_data = [15, 60, 57, 0, 48, 100, 10] 
-
-const weather_data = [["foggy", "foggy", "cloudy", "sunny", "foggy", "rainy", "snowy"],
-                      ["cloudy", "rainy", "sunny", "sunny", "foggy", "stormy", "snowy"],
-                      ["sunny", "rainy", "cloudy", "sunny", "cloudy", "stormy", "cloudy"],
-                      ["sunny", "cloudy", "stormy", "sunny", "cloudy", "stormy", "sunny"],
-                      ["cloudy_night", "clear_night", "cloudy_night", "clear_night", "stormy_night", "rainy", "clear_night"],
-                      ["stormy_night", "clear_night", "stormy_night", "clear_night", "cloudy_night", "snowy", "cloudy_night"]] 
-
-dayChange(parseInt(localStorage.getItem("day") || "1"))
-
-
 function dayChange (n) {
     localStorage.setItem('day', n)
 
     const day_parts = document.querySelectorAll("#wimg")
     const day_parts_text = document.querySelectorAll("#wtext")
 
-    let data = undefined
-    let data_split = undefined
+    console.log(data)
+
+    let tmp = undefined
+    let tmp_split = undefined
     
     for (let i = 0; i < day_parts.length; i++) {
 
-        data = weather_data[i][n-1]
+        tmp = data[n-1].weather_data[i]
 
-        day_parts[i].className= data
-        day_parts[i].src= data + ".webp"
+        day_parts[i].className= tmp
+        day_parts[i].src= tmp + ".webp"
 
-        data_split = data.split("_")
-        data=""
+        tmp_split = tmp.split("_")
+        tmp = ""
 
-        for (let i = 0; i < data_split.length; i++) {
-            data += data_split[i][0].toUpperCase() + data_split[i].slice(1) + " "
+        for (let u = 0; u < tmp_split.length; u++) {
+            tmp += tmp_split[u][0].toUpperCase() + tmp_split[u].slice(1) + " "
         }
-        day_parts_text[i].innerHTML = data
+        day_parts_text[i].innerHTML = tmp
     }
 
-    document.getElementById("max_number").innerHTML = temperature_data[n-1][0] + "º C"
-    document.getElementById("min_number").innerHTML = temperature_data[n-1][1] + "º C"
+    document.getElementById("max_number").innerHTML = data[n-1].max_temp + "º C"
+    document.getElementById("min_number").innerHTML = data[n-1].min_temp + "º C"
 
-    document.getElementById("rain_chance").innerHTML = precipitation_data[n-1] + " %"
+    document.getElementById("rain_chance").innerHTML = data[n-1].precipitation + " %"
 }
 
+async function main() {
+    const promises = [
+        new Promise(resolve => document.addEventListener('DOMContentLoaded', resolve)),
+        (async function() {
+            let d = await fetch("data.json")
+            return await d.json()
+        })()
+    ]
+
+    data = (await Promise.all(promises))[1]
+
+    console.log(data)
+
+    let stylesheet = document.querySelector('link[rel="stylesheet"]')
+    stylesheet.setAttribute('href', localStorage.getItem("theme") || 'dark_mode.css')
+
+    if (localStorage.getItem("theme") === 'light_mode.css') {
+        document.getElementById("logo").src = "logo_sun.svg"
+    }
+
+    dayChange(parseInt(localStorage.getItem("day") || "1"))
+}
+
+main()
