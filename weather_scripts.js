@@ -1,4 +1,5 @@
 let data = undefined
+let stylesheet = undefined
 
 //Function inspired from https://www.geeksforgeeks.org/javascript/how-to-switch-between-multiple-css-stylesheets-using-javascript/
 function toggleTheme() {
@@ -20,8 +21,6 @@ function dayChange (n) {
 
     const day_parts = document.querySelectorAll("#wimg")
     const day_parts_text = document.querySelectorAll("#wtext")
-
-    console.log(data)
 
     let tmp = undefined
     let tmp_split = undefined
@@ -59,9 +58,7 @@ async function main() {
 
     data = (await Promise.all(promises))[1]
 
-    console.log(data)
-
-    let stylesheet = document.querySelector('link[rel="stylesheet"]')
+    stylesheet = document.querySelector('link[rel="stylesheet"]')
     stylesheet.setAttribute('href', localStorage.getItem("theme") || 'dark_mode.css')
 
     if (localStorage.getItem("theme") === 'light_mode.css') {
